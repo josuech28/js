@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>More examples of Arrow Funtions</title>
+</head>
+<body>
+		<h4>More examples of arrow functions.. See Console</h4>
+</body>
+<script type="text/javascript">
+	const race = '100m Dash';
+	const winners = ['Josue Chinchilla', 'Bolt', 'Cristiano Ronaldo'];
+
+	const win = winners.map((winner, index) => ({name:winner, race, place: index + 1}));
+	console.log(win);
+
+	//Other example
+	const age = [55,25,12,16,89,34,11,13,19,20,23,95];
+	const young = age.filter(age => age <= 18);
+	console.log(young);
+
+</script>
+</html>

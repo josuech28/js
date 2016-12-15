@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Arrow Funtion</title>
+</head>
+<body>
+	<h1>See console</h1>
+</body>
+<script>
+	const teams = ['Real Madrid', 'Barcelona', 'Atletico de Madrid','Alajuelense'];
+
+	// with out arrow funtions
+	const fullName = teams.map(function(name){
+		return `TEAM: ${name}`;
+	});
+
+	console.log(fullName);
+
+	// arrow function with one or more parameters
+	const fullName1 = teams.map((name) => {
+		return `TEAM: ${name}`;
+	})
+	console.log(fullName1);
+
+	// arrow function with ONE parameter
+	const fullName2 = teams.map(name => {
+		return `TEAM: ${name}`;
+	});
+	console.log(fullName2);
+
+	// without brakets
+	const fullName3 = teams.map(name => `TEAM: ${name}`);
+	console.log(fullName3);
+
+	//without parameters
+	const fullName5 = teams.map(() => `NEW TEAM NOT DEFINED`);
+	console.log(fullName5);
+
+	// Arrow function
+	const sayName = (name) => { 
+		alert(`Hello ${name}!`)
+	};
+	sayName('Josue Chinchilla Hidalgo');
+
+</script>
+</html>
