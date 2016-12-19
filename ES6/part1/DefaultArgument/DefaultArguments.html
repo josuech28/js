@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Default Arguments</title>
+</head>
+<body>
+	<h1>See console and markup</h1>
+</body>
+<script type="">
+	// Using really default 
+	function defaultCalculateBill(total, tax = 0.13, tip = 0.15){
+		return total + (total * tax) + (total * tip);
+	}
+	const totalDefaultCalculateBill = defaultCalculateBill(100,0.15,0.18);
+	console.log('Default Default Bill (all parameters) ' + totalDefaultCalculateBill);
+
+	const totalDefaulBillNotParameter = defaultCalculateBill(100, undefined, 0.59);
+	console.log('Default Default Bill (without parameters) ' + totalDefaulBillNotParameter);
+	//Normal calculate Bill
+	function calculateBill(total,tax,tip){
+		return total + (total * tax) + (total * tip);
+	}
+	const totalBill = calculateBill(100,0.13,0.15);
+	console.log('Total Bill (normal method) ' + totalBill);
+
+	// If dont have all parameters but not good way
+	function calculateBillUndefined(total,tax,tip){
+		if(tax === undefined){
+			tax = 0.13;
+		}
+		if(tip === undefined){
+			tip = 0.15;
+		}
+		return total + (total * tax) + (total * tip);
+	}
+	const totalBillUndefined = calculateBillUndefined(100);
+	console.log('Total Bill with no tax no tip ' + totalBillUndefined);
+
+	//Better option with no parameters
+	function calculateBillUndefinedBetter(total,tax,tip){
+		tax = tax || 0.13;
+		tip = tip || 0.15;
+		return total + (total * tax) + (total * tip);
+	}
+	const totalBillUndefinedBetter = calculateBillUndefinedBetter(100);
+	console.log('Total Bill with no tax no tip better option ' + totalBillUndefinedBetter);
+
+</script>
+</html>
