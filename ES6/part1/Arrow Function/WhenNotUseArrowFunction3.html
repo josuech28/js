@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>When not use Arrow Function</title>
+</head>
+<style type="text/css">
+button{
+	font-size: 100px;
+	background: yellow;
+}
+</style>
+<body>
+	<h1>When not use Arrow Function</h1>
+	<p>When extends prototype can not use Arrow Function</p>
+	<button id="btnInfo">
+		See Car Information
+	</button>
+	<p>
+		When you need arguments object can not use Arrow Function
+	</p>
+</body>
+<script type="text/javascript">
+	class Car{
+		constructor(make,colour){
+			this.make = make;
+			this.colour = colour;
+		}
+	}
+	const bmw = new Car('bmw', 'red');
+	const honda = new Car('honda','gray');
+
+    /*
+	Car.prototype.printCar = () => {
+		//This car is a UNDEFINED int the colour UNDEFINDED
+		return 	`This car is a ${this.make} int the colour ${this.colour}`;
+	};
+	*/
+	Car.prototype.printCar = function(){
+		return 	`This car is a ${this.make} in the colour ${this.colour}`;
+	};
+	const btn = document.querySelector('#btnInfo');
+	btn.addEventListener('click', function(){
+		this.innerText = honda.printCar();
+	});
+
+</script>
+</html>

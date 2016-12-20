@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>When not use Arrow Function</title>
+	<style type="text/css">
+		button{
+			font-size: 100px;
+
+		}
+		.on{
+			background: #ffc600;
+		}
+	</style>
+</head>
+<body>
+	<h1>When not use arrow function</h1>
+	<button id="push-button">
+		Push Me
+	</button>
+</body>
+<script type="text/javascript">
+	const button = document.querySelector('#push-button');
+	/*
+	*In this case this is window, can not use arrow function here
+		button.addEventListener('click', () =>{
+			console.log(this); // window
+		this.classList.toggle('on');
+	});
+	*/
+	button.addEventListener('click', function(){
+		console.log(this) // button
+		this.classList.toggle('on');
+	});
+
+</script>
+</html>

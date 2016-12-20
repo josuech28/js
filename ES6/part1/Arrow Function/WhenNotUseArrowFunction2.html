@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>When not use Arrow Function Part 2</title>
+</head>
+<style type="text/css">
+	button{
+		font-size: 100px;
+		background: #ffc600;
+	}
+
+</style>
+<body>
+	<h1>When not use Arrow Function Part 2</h1>
+	<button id="btn-score">
+		Get Score!
+	</button>
+</body>
+<script type="text/javascript">
+	/*
+	* Can not user arrow function, becouse this is windows in this context...
+	const person = {
+		points: 23,
+		score: () => {
+			console.log(this); // window
+			this.points++;
+		}
+	}
+	*/
+	const person = {
+		points: 23,
+		score: function() {
+			console.log(this); // window
+			this.points++;
+		}
+	}
+	const btnscore = document.querySelector('#btn-score');
+	btnscore.addEventListener('click', function(){
+		//Function
+		person.score();
+		btnscore.innerText = person.points;
+	});
+</script>
+</html>
