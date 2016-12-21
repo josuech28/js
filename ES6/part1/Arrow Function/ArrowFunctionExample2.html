@@ -1,0 +1,37 @@
+ <html>
+ <head>
+ 	<title>Arrow Exercise 2</title>
+ </head>
+ <style type="text/css">
+ h1{
+ 	text-align: center;
+ 	font-family: arial;
+ 	color: blue;
+ }
+ h4{
+ 	text-align: center;
+ 	font-family: arial;
+ 	color: brown;
+ }
+ button{
+ 	font-size: 60px;
+ 	background: yellow;
+ }
+ </style>
+ <body>
+ 	<h1>List of Numbers</h1>
+ 	<h4>[3,62,234,7,23,76,92]</h4>
+ 	<button id="btn">
+ 		Get numbers less than 70!
+ 	</button>
+ </body>
+ <script type="text/javascript">
+ 	const number = [3,62,234,7,23,76,92];
+ 	const filterNumber = number.filter(num => num > 70);
+ 	console.log(filterNumber);
+ 	const btn = document.querySelector('#btn');
+ 	btn.addEventListener('click',function() {
+ 		this.innerText = filterNumber;
+ 	});
+ </script>
+ </html>
