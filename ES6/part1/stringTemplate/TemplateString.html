@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Template String</title>
+	<style type="text/css">
+		button {
+			font-size: 40px;
+			background-color: yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Template Strings!</h1>
+	<button id="getText">
+		Get Template Text :)
+	</button>
+</body>
+<script type="text/javascript">
+	const age = 4;
+	const name = 'Rufino';
+
+	const sentenceOrdinary = name + 's age is ' + age * 7;
+	const stringTemplate = `${name}s age is ${age*7}`;
+	console.log(sentenceOrdinary);
+
+	const btn = document.querySelector('#getText');
+	btn.addEventListener('click', function() {
+		this.innerText = stringTemplate;
+	});
+
+</script>
+</html>
