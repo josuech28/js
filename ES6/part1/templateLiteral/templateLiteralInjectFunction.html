@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+	<title>Template Literal</title>
+</head>
+<body>
+	<h1>Template Literal with function</h1>
+	<div id="insert"></div>
+</body>
+<script type="text/javascript">
+	const restaurant = {
+		name: 'Macdonalds',
+		location: 'Plaza de la Paz, Costa Rica',
+		dishes: ['BigMac','Doble Hamburger', 'Mac Party', 'Fries', 'Chiken']
+	};
+	function getDish(array){
+		return `
+		<ul>
+		${array.map(item => `<li>${item}</li>`)
+		.join('')}
+		</ul>
+		`;
+	}
+	const descripton = `We have multiple restaurants in the area, but the most near is in `; 
+	const markup = `
+		<h1>${restaurant.name}</h1>
+		<p>
+			${descripton} <b>${restaurant.location}</b>
+		</p>
+		<p>
+			Our principals dishes are:
+			${getDish(restaurant.dishes)}
+		</p>
+	`;
+	const insert = document.querySelector('#insert');
+	insert.innerHTML = markup;
+</script>
+</html>

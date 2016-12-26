@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lan="en">
+    <meta charset="UTF-8">
+	<title>Template Literal</title>
+</head>
+<style type="text/css">
+	button{
+		font-size: 40px;
+		background: yellow;
+	}
+</style>
+<body>
+	<h1>Template Literal</h1>
+	<button id="getComponent">
+		Get Component!
+	</button>
+	<div id="content"></div>
+</body>
+<script type="text/javascript">
+	const song = {
+		name: 'Dont cry',
+		artist: 'Guns and Roses',
+		featuring: 'NOSE'
+	};
+	const markUp = `
+		<h4>Song -> ${song.name}</h4>
+		<p>Artist: ${song.artist} ${song.featuring ? `(featuring) ${song.featuring}` : ``}</p>
+	`;
+	const btn = document.querySelector('#getComponent');
+	const content = document.querySelector('#content'); 
+	btn.addEventListener('click', function(){
+		content.innerHTML= markUp;
+		
+
+	});
+	document.body.innerHTML = markUp;
+
+
+</script>
+</html>

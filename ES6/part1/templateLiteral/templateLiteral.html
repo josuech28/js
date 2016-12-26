@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lan="en">
+    <meta charset="UTF-8">
+	<title>Template Literal</title>
+</head>
+<style type="text/css">
+	button{
+		font-size: 40px;
+		background: yellow;
+	}
+	.player{
+		background: green;
+		font-size: 15px;
+		font-family: sans-serif;
+		padding: 300px 300px
+		margin: 0 auto;
+	}
+	.team{
+		font-style: oblique;
+	}
+	.position {
+		color: red;
+	}
+	.goal{
+		font-size: 20px;
+	}
+</style>
+<body>
+	<h1>Template Literal</h1>
+	<button id="getComponent">
+		Get Component!
+	</button>
+	<div id="content">
+	</div>
+	<div id="listPlayer">
+
+	</div>
+</body>
+<script type="text/javascript">
+	const player = {
+		name: 'Josue Chinchilla Hidalgo',
+		team: 'Alajuelense',
+		position: 'Forward',
+		goal: 39
+	};
+	const markUp = ` 
+		<div class="player">
+			<h2>${player.name}</h2>
+			<span class="team">Team: ${player.team}</span>
+			<p class="position">Position: ${player.position}</p>
+			<p class="goal">Goals: ${player.goal}</p>
+		</div>
+	`;
+	const content = document.querySelector('#content'); 
+	const contentList = document.querySelector('#listPlayer'); 
+	const btn = document.querySelector('#getComponent');
+
+	const players = [ {
+		name: 'Josue Chinchilla Hidalgo',
+		team: 'Alajuelense',
+		position: 'Forward',
+		goal: 39
+	},{
+		name: 'Cristiano Ronaldo',
+		team: 'Real Madrid',
+		position: 'Forward',
+		goal: 69
+	},{
+		name: 'Leonel Mesi',
+		team: 'Barcelona FC',
+		position: 'Forward',
+		goal: 10
+	},];
+	const ComponentPlayer = `
+	<ul>
+		${players.map(player => `<li>Team: ${player.team} Position: ${player.position} Goals: ${player.goal}
+		 </li>`).join('')}
+	</ul>
+	`;
+		btn.addEventListener('click', function(){
+		content.innerHTML= markUp;
+		contentList.innerHTML = ComponentPlayer;
+
+	});
+
+</script>
+</html>
